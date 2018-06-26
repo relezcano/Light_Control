@@ -1,5 +1,5 @@
 # Light Control - Domótica
-# Software para control de luces
+# Software para el control de luces
 
 - Proyecto realizado en la materia Laboratorio de Lenguajes II. 
 - Carrera: Técnico superior en desarrollo de sistemas.
