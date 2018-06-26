@@ -6,7 +6,7 @@
 - Año: 2°
 - Fecha: 25/06/2018.
 
-@ Controle las luces de una casa por medio de una interfaz web que se conecta a través de la red al Arduino UNO que enciende o apaga luces led.
+. Controle las luces de una casa por medio de una interfaz web que se conecta a través de la red al Arduino UNO que enciende o apaga luces led.
 
 # Materiales
 
