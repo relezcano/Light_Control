@@ -6,8 +6,8 @@
 #include <Ethernet.h>
  
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };   // Direccion Fisica MAC
-byte ip[] = { 192, 168, 0, 50 };                       // IP Local que usted debe configurar - 192.168.0.50
-byte gateway[] = { 192, 168, 0, 1 };                   // Puerta de enlace - 192.168.1.1 en mi red / 192.168.0.1 en otras redes.
+byte ip[] = { 192, 168, 1, 50 };                       // IP Local que usted debe configurar - 192.168.0.50
+byte gateway[] = { 192, 168, 1, 1 };                   // Puerta de enlace - 192.168.1.1 en mi red / 192.168.0.1 en otras redes.
 byte subnet[] = { 255, 255, 255, 0 };                  // Mascara de Sub Red
 EthernetServer server(80);                             // Se usa el puerto 80 del servidor     
 String readString;
@@ -53,8 +53,9 @@ void loop() {
            client.println();     
            client.println (F("<html>"));
            client.println (F("<head>"));
+           client.println (F("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"));
            client.println (F("<meta http-equiv=\"refresh\" content=\"30\">"));
-           client.println (F("<style type=\"text/css\">body {font-family: Georgia; color: #ffffff; background-color: #0077b3} h5 {margin-right: 420px} h6 {margin-left: 420px; font-size: 14px} a {font-size: 18px; border-radius: 10px; padding: 16px; border-color: black; border-style: solid; background-color: #b3e6ff; text-decoration: none} </style>"));
+           client.println (F("<style type=\"text/css\">body {font-family: Georgia; color: #ffffff; background-color: #0077b3} h5 {margin-right: 300px} h6 {margin-left: 290px; font-size: 14px} a {font-size: 16px; border-radius: 10px; padding: 5px; border-color: black; border-style: solid; background-color: #b3e6ff; text-decoration: none} </style>"));
            client.println (F("<TITLE>Domotica - Control de luces</TITLE>"));
            client.println (F("</head>"));
            
@@ -104,7 +105,16 @@ void loop() {
            } else {
             client.println (F("<h6>OFF</h6>"));
            }
-              
+
+
+           client.println (F("<a href=\"/?button7on\"\"><strong> Encender Todo</strong></a>"));        //pinmode2,3,5,6          
+           client.println (F("<a style='margin-left: 10px' href=\"/?button7off\"\"><strong> Apagar Todo </strong></a>"));
+           
+           if (digitalRead(6)==HIGH){
+            client.println (F("<h5>ON</h5>"));
+           } else {
+            client.println (F("<h6>OFF</h6>"));
+           }   
            
            client.println (F("</div>"));
            client.println (F("<hr />"));
@@ -144,7 +154,19 @@ void loop() {
            if (readString.indexOf("?button6off") >0){
                digitalWrite(6, LOW);
            }
-                      
+
+           if (readString.indexOf("?button7on") >0){
+               digitalWrite(2, HIGH);
+               digitalWrite(3, HIGH);
+               digitalWrite(5, HIGH);
+               digitalWrite(6, HIGH);
+           }
+           if (readString.indexOf("?button7off") >0){
+               digitalWrite(2, LOW);
+               digitalWrite(3, LOW);
+               digitalWrite(5, LOW);
+               digitalWrite(6, LOW);
+           }
             // Limpia el String(Cadena de Caracteres para una nueva lectura
             readString="";  
            
