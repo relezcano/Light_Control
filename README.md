@@ -10,7 +10,7 @@ Controle las luces de una casa por medio de una interfaz web que se conecta a tr
 
 Se le otorga una IP al Ethernet Shield del Arduino y este funciona como un nodo dentro de la red al cual se puede acceder desde cualquier dispositivo. 
 
-Para ingresar al software es necesario escribir la IP que esté configurada en el código (en este caso 192.168.1.50) en la barra de navegación de navegador preferido (Funciona perfectamente en Google Chrome y Mozilla Firefox). Luego de ingresar en esa dirección, será redirigido a una interfaz web (alojada dentro del Arduino) en la cual podrá encontrar botones para encender o apagar las luces de su casa.
+Para ingresar al software es necesario escribir la IP que esté configurada en el código (en este caso 192.168.1.50) en la barra de navegación de navegador preferido (Funciona perfectamente en Google Chrome y Mozilla Firefox). Luego de ingresar en esa dirección, será redirigido a una interfaz web (alojada dentro del Arduino) en la cual podrá encontrar botones para interactuar con las luces de su casa, encendiendolas o apagandolas desde cualquier lugar de su hogar.
 
 # Materiales
 
