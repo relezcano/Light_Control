@@ -1,3 +1,4 @@
+
 /* Light Control Arduino Ethernet
  controla el encendido o apagado de los Pin 2,3,4 ,5 y 6 del Arduino.
  */
@@ -110,7 +111,7 @@ void loop() {
            client.println (F("<a href=\"/?button7on\"\"><strong> Encender Todo</strong></a>"));        //pinmode2,3,5,6          
            client.println (F("<a style='margin-left: 10px' href=\"/?button7off\"\"><strong> Apagar Todo </strong></a>"));
            
-           if (digitalRead(6)==HIGH){
+           if (digitalRead(2)==HIGH && digitalRead(3)==HIGH && digitalRead(5)==HIGH && digitalRead(6)==HIGH){
             client.println (F("<h5>ON</h5>"));
            } else {
             client.println (F("<h6>OFF</h6>"));
