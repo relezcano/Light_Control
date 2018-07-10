@@ -68,8 +68,8 @@ void loop() {
            client.println (F("<br>"));
 
            
-           client.println (F("<a href=\"/?button2on\"\"><strong> Encender Luz PA 1</strong></a>"));           // construye en la pagina cada uno de los botones
-           client.println (F("<a style='margin-left: 10px' href=\"/?button2off\"\"><strong> Apagar Luz PA 1</strong></a>"));   // pinmode2
+           client.println (F("<a href=\"/?button1on\"\"><strong> Encender Luz PA 1</strong></a>"));           // construye en la pagina cada uno de los botones
+           client.println (F("<a style='margin-left: 10px' href=\"/?button1off\"\"><strong> Apagar Luz PA 1</strong></a>"));   // pinmode2
            
            if (digitalRead(2)==HIGH){
             client.println (F("<h5>ON</h5>"));
@@ -78,8 +78,8 @@ void loop() {
            }
 
            
-           client.println (F("<a href=\"/?button3on\"\"><strong> Encender Luz PA 2</strong></a>"));        // pinmode3
-           client.println (F("<a style='margin-left: 10px' href=\"/?button3off\"\"><strong> Apagar Luz PA 2</strong></a>"));  
+           client.println (F("<a href=\"/?button2on\"\"><strong> Encender Luz PA 2</strong></a>"));        // pinmode3
+           client.println (F("<a style='margin-left: 10px' href=\"/?button2off\"\"><strong> Apagar Luz PA 2</strong></a>"));  
            
            if (digitalRead(3)==HIGH){
             client.println (F("<h5>ON</h5>"));
@@ -88,8 +88,8 @@ void loop() {
            }
 
             
-           client.println (F("<a href=\"/?button5on\"\"><strong> Encender Luz PB</strong></a>"));       //pinmode5
-           client.println (F("<a style='margin-left: 10px' href=\"/?button5off\"\"><strong> Apagar Luz PB</strong></a>")); 
+           client.println (F("<a href=\"/?button3on\"\"><strong> Encender Luz PB</strong></a>"));       //pinmode5
+           client.println (F("<a style='margin-left: 10px' href=\"/?button3off\"\"><strong> Apagar Luz PB</strong></a>")); 
            
            if (digitalRead(5)==HIGH){
             client.println (F("<h5>ON</h5>"));
@@ -98,8 +98,8 @@ void loop() {
            }
               
             
-           client.println (F("<a href=\"/?button6on\"\"><strong> Encender Puerta</strong></a>"));        //pinmode6          
-           client.println (F("<a style='margin-left: 10px' href=\"/?button6off\"\"><strong> Apagar Puerta </strong></a>"));
+           client.println (F("<a href=\"/?button4on\"\"><strong> Encender Puerta</strong></a>"));        //pinmode6          
+           client.println (F("<a style='margin-left: 10px' href=\"/?button4off\"\"><strong> Apagar Puerta </strong></a>"));
            
            if (digitalRead(6)==HIGH){
             client.println (F("<h5>ON</h5>"));
@@ -108,8 +108,8 @@ void loop() {
            }
 
 
-           client.println (F("<a href=\"/?button7on\"\"><strong> Encender Todo</strong></a>"));        //pinmode2,3,5,6          
-           client.println (F("<a style='margin-left: 10px' href=\"/?button7off\"\"><strong> Apagar Todo </strong></a>"));
+           client.println (F("<a href=\"/?button5on\"\"><strong> Encender Todo</strong></a>"));        //pinmode2,3,5,6          
+           client.println (F("<a style='margin-left: 10px' href=\"/?button5off\"\"><strong> Apagar Todo </strong></a>"));
            
            if (digitalRead(2)==HIGH && digitalRead(3)==HIGH && digitalRead(5)==HIGH && digitalRead(6)==HIGH){
             client.println (F("<h5>ON</h5>"));
@@ -129,40 +129,40 @@ void loop() {
            
            //control del arduino si un boton es presionado
                    
-           if (readString.indexOf("?button2on") >0){
+           if (readString.indexOf("?button1on") >0){
                digitalWrite(2, HIGH);
            }
-           if (readString.indexOf("?button2off") >0){
+           if (readString.indexOf("?button1off") >0){
                digitalWrite(2, LOW);
            }
-           if (readString.indexOf("?button3on") >0){
+           if (readString.indexOf("?button2on") >0){
                digitalWrite(3, HIGH);
            }
-           if (readString.indexOf("?button3off") >0){
+           if (readString.indexOf("?button2off") >0){
                digitalWrite(3, LOW);
            }
            
-            if (readString.indexOf("?button5on") >0){
+           if (readString.indexOf("?button3on") >0){
                digitalWrite(5, HIGH);
            }
-           if (readString.indexOf("?button5off") >0){
+           if (readString.indexOf("?button3off") >0){
                digitalWrite(5, LOW);
            }
            
-           if (readString.indexOf("?button6on") >0){
+           if (readString.indexOf("?button4on") >0){
                digitalWrite(6, HIGH);
            }
-           if (readString.indexOf("?button6off") >0){
+           if (readString.indexOf("?button4off") >0){
                digitalWrite(6, LOW);
            }
 
-           if (readString.indexOf("?button7on") >0){
+           if (readString.indexOf("?button5on") >0){
                digitalWrite(2, HIGH);
                digitalWrite(3, HIGH);
                digitalWrite(5, HIGH);
                digitalWrite(6, HIGH);
            }
-           if (readString.indexOf("?button7off") >0){
+           if (readString.indexOf("?button5off") >0){
                digitalWrite(2, LOW);
                digitalWrite(3, LOW);
                digitalWrite(5, LOW);
